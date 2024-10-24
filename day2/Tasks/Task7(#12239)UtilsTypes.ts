@@ -1,14 +1,27 @@
 interface  User {
     age:  number |undefined;
     name:string|null;
+    address :{
+        city:string|null,
+        state:string|undefined
+    }
 
 }
 
-type t = keyof User;
+type t =  keyof User;
+
+
+
 
 type userTypeKeys =["age","name"]
 
-type DefinedProperties< User> =  Record< keyof User,NonNullable<User[keyof User]>>
+type DefinedProperties<User> =  {
+    [key in keyof User] :  
+     User[key] extends object ? DefinedProperties< User[key]> : NonNullable<User[key]>;
+}
+
+// not nullable util 
+
 
 
 
@@ -20,7 +33,11 @@ type DefineExample = DefinedProperties<  User>;
 
 const data :DefineExample ={
     age:123,
-    name:"Aditya"
+    name:"Aditya",
+    address :{
+        city:"Delhi",
+        state:"Alamat",
+    }
 
 }
 

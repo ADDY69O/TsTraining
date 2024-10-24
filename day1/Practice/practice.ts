@@ -194,6 +194,16 @@
 
 
 
+// let firstName = "aditya"
+// let num = 21;
+
+// firstName = num as unknown as string;
+// console.log(firstName)
+
+
+
+
+
 
 
 

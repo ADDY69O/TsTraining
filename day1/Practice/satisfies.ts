@@ -16,7 +16,7 @@ type Person  ={
     friends :userInfo,
     website : userInfo
 
-}
+}  
 
 
 let Addy :Person = {
@@ -29,16 +29,17 @@ let Addy :Person = {
     website:"www.mywebsite.com"
 }
 
+Addy.website.toUpperCase();
 
-let Addy2  = {
-    personalInfo :{
+let Addy2 :userInfo = {
+    // personalInfo :{
         name:"Aditya2",
         age:20,
         address:"UP"
-    },
-    friends:21,
-    website:"www.mywebsite.com"
-}satisfies userInfo;
+    // },
+    // friends:21,
+    // website:"www.mywebsite.com"
+};
 
 
 Addy2.website.toUpperCase()
